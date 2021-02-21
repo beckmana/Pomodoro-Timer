@@ -72,6 +72,7 @@ function Pomodoro() {
   }
 
   //turns mins into secs to find percent of time passed
+  //100% - (seconds passed / total seconds) * 100 
   const progressPercent = (mins, secs, initMins) => 100 - (((mins * 60) + secs) / (initMins * 60) * 100);
   
 
@@ -90,7 +91,7 @@ function Pomodoro() {
       })
       
       //Change progress bar percent
-      inFocus ? 
+      inFocus ?
         setProgressBar(percent => percent = progressPercent(timerMins, timerSecs, initFocusTime)) :
         setProgressBar(percent => percent = progressPercent(timerMins, timerSecs, initBreakTime))
       
@@ -134,19 +135,16 @@ function Pomodoro() {
   return (
     <div className="pomodoro">
       <div className="row">
-        
           <Focus
             focusTime={focusTime}
             decreaseFocusTime={handleDecreaseFocus}
             increaseFocusTime={handleIncreaseFocus}
           />
-      
           <Break
             breakTime={breakTime}
             decreaseBreakTime={handleDecreaseBreak}
             increaseBreaktime={handleIncreaseBreak}
           />
-          
       </div>
 
       <div className="row">
