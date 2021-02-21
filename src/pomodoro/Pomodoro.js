@@ -32,8 +32,8 @@ function Pomodoro() {
 
   //Focus/Break increase and decrease button handlers
   const handleDecreaseFocus = () => {
-    if (focusTime > 1 && !isTimerRunning && initSession) {
-      setFocusTime(mins => mins -= 1);
+    if (focusTime > 5 && !isTimerRunning && initSession) {
+      setFocusTime(mins => mins -= 5);
     }
   }
   const handleIncreaseFocus = () => {

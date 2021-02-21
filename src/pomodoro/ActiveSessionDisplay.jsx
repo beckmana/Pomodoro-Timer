@@ -17,9 +17,9 @@ function ActiveSessionDisplay({activeSession, inFocus, focusTime, breakTime, tim
             <p className="lead" data-testid="session-sub-title">
                 {secondsToDuration(seconds)} remaining
             </p>
-            <p style={{color: "red"}}>
-                {!isTimerRunning ? <h2>PAUSED</h2> : null}
-            </p>
+            <h3 style={{color: "red"}}>
+                {!isTimerRunning ? "PAUSED" : null}
+            </h3>
           </div>
         </div>
         <div className="row mb-2">
