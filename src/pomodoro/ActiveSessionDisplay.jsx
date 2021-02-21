@@ -10,7 +10,9 @@ function ActiveSessionDisplay({activeSession, inFocus, focusTime, breakTime, tim
         <div className="row mb-2">
           <div className="col">
             {/* TODO: Update message below to include current session (Focusing or On Break) and total duration */}
-            <h2 data-testid="session-title">{inFocus ? `Focusing for ${minutesToDuration(focusTime)} minutes` : `On Break for ${minutesToDuration(breakTime)} minutes`}</h2>
+            <h2 data-testid="session-title">
+                {inFocus ? `Focusing for ${minutesToDuration(focusTime)} minutes` : `On Break for ${minutesToDuration(breakTime)} minutes`}
+            </h2>
             {/* TODO: Update message below to include time remaining in the current session */}
             <p className="lead" data-testid="session-sub-title">
                 {secondsToDuration(seconds)} remaining
